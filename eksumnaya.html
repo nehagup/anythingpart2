@@ -1,0 +1,30 @@
+<html>
+      <head>
+        <body>
+          <link href = "bootstrap.min.css" rel = 'stylesheet' type = 'text/css' />
+          <script src="newserver.js" language="Javascript" type="text/javascript"></script>
+          <!-- <script src="convert.js" language="Javascript" type="text/javascript"></script> -->
+          <link href = "eksumnaya.css" rel = 'stylesheet'>
+          <form method="POST">
+           <div  class = "col-sm-4" align="center">
+                <h1>Link Collection</h1>
+              </div>
+           <span  class = "col-sm-4" id="dynamicInput" align="center">
+                Bookmark 1<br><input type="text" id="textInput" name='textname' oninput="convert();">
+                <p id="converted_url"></p>
+              </span>
+           <div class = "col-sm-12"  align = "center";>
+                <input type="button" value="Add" id="buttons" onClick="addInput('dynamicInput')">
+
+                </div>
+           <div align ="center" id="fontSize">
+                      <input type="radio" name="radio" value="Private" checked> Private
+                      <input type="radio" name="radio" value="Public"> Public<br>
+                    </div>
+           <div align="center">
+              <TEXTAREA id="username"  NAME="data" value="username" ></TEXTAREA>   </div>
+
+      </form>
+              </body>
+              </head>
+              </html>
