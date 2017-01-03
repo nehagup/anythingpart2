@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  var currentindex = 0;
+function addInput(){
+    var lastinput = document.getElementById('input');
+   if(lastinput.value != ''){
+        var container = document.getElementById('input');
+        var newinput = document.createElement('input');
+        currentindex++;
+        newinput.id = 'input'+currentindex;
+        newinput.name = 'input' + currentindex;
+        <!-- console.log(newinput.id); -->
+        newinput.onkeyup = addInput;
+
+        document.body.appendChild(newinput);
+        var    hoho =  newinput.getAttribute.value;
+
+            console.log(hoho + currentindex);
+
+        <!-- convert(hoho,currentindex); -->
+      }}
+function convert(text,CI)
+{
+  <!-- console.log(text); -->
+var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+var text1=text.replace(exp, "<a href='$1'>$1</a>");
+var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+
+var container = document.getElementById('abechal');
+var hyper = document.createElement('a');
+<!-- hyper.id = 'a' + CI;
+container.appendChild(hyper);
+
+ -->
+
+
+	  document.getElementById("abechal").innerHTML=text1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
+}
+
+</script>
+   <h1>SAVE YOUR WEBSITES</h1>
+     </textarea>
+     <a href="http://$2"  id="abechal"></a>
+     <p id="url"></p>
+     <div id="inputcontainer">
+         <input type="text" name="input0" id="input" onkeyup="addInput();"></input>
+     </div>
+      <span id="fooBar"></span>
+</body>
+</html>

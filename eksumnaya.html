@@ -1,30 +1,105 @@
+<!DOCTYPE html>
 <html>
-      <head>
-        <body>
-          <link href = "bootstrap.min.css" rel = 'stylesheet' type = 'text/css' />
-          <script src="newserver.js" language="Javascript" type="text/javascript"></script>
-          <!-- <script src="convert.js" language="Javascript" type="text/javascript"></script> -->
-          <link href = "eksumnaya.css" rel = 'stylesheet'>
-          <form method="POST">
-           <div  class = "col-sm-4" align="center">
-                <h1>Link Collection</h1>
-              </div>
-           <span  class = "col-sm-4" id="dynamicInput" align="center">
-                Bookmark 1<br><input type="text" id="textInput" name='textname' oninput="convert();">
-                <p id="converted_url"></p>
-              </span>
-           <div class = "col-sm-12"  align = "center";>
-                <input type="button" value="Add" id="buttons" onClick="addInput('dynamicInput')">
+<body style="margin:0;">
 
-                </div>
-           <div align ="center" id="fontSize">
-                      <input type="radio" name="radio" value="Private" checked> Private
-                      <input type="radio" name="radio" value="Public"> Public<br>
-                    </div>
-           <div align="center">
-              <TEXTAREA id="username"  NAME="data" value="username" ></TEXTAREA>   </div>
+<link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
 
-      </form>
-              </body>
-              </head>
-              </html>
+<script>
+
+  var currentindex = 0;
+  var i=0;
+  function addInput()
+  {
+  var lastinput = document.getElementById('input'+currentindex);
+  if(lastinput.value != '')
+    {
+        var container = document.getElementById('inputcontainer');
+        var newinput = document.createElement('input');
+        currentindex++;
+        newinput.type = "text";
+        newinput.name = 'input'+currentindex;
+        newinput.style.minWidth = "50%";
+        newinput.style.minHeight = "15px";
+        newinput.style.padding = "12px 20px";
+        newinput.style.margin = "8px 0";
+        newinput.placeholder = "BOOKMARK" + (currentindex+1)  ;
+        newinput.style.fontSize = "15px";
+        newinput.style.borderRadius = "4px";
+        newinput.style.fontWeight = "bold";
+        newinput.style.border = "1px solid #ccc";
+        newinput.id = 'input'+currentindex;
+        newinput.onkeyup = addInput;
+        container.appendChild(newinput);
+    }
+}
+
+function breakin(){
+  for( var i= 0; i< currentindex; i++){
+        document.write("<br>");
+        currentId = "input" + i;
+        currentElement = document.getElementById(currentId);
+
+  }
+}
+
+function submit() {
+  console.log(currentindex);
+    for (var i = 0; i < currentindex; i++) {
+      currentId = "input" + i;
+      currentElement = document.getElementById(currentId);
+      console.log(currentElement.value);
+  }
+}
+function check(form) { /*function to check userid & password*/
+                /*the following code checkes whether the entered userid and password are matching*/
+                if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd") {
+                    window.open('target.html')/*opens the target page while Id & password matches*/
+                }
+                else {
+                    alert("Error Password or Username")/*displays error message*/
+                }
+            }
+
+
+</script>
+<div id="body"><br>
+    <div id="heading" align = "center">
+      SAVE AND SHARE BOOKMARKS ONLINE
+          </div>
+          <br>
+  <div id="inputcontainer" align="center">
+      <input type="text" name="input0" id="input0" placeholder = "BOOKMARK 1" onkeyup="addInput()" />
+  </div>
+  <!-- <form name="login" align="center"> -->
+  <div align="center">
+    <span class="submit" style="margin-bottom:0;">
+    <input name="paste[restricted]" type="hidden" value="0"/>
+    <input id="paste_restricted" name="paste[restricted]" onclick="toggle_private();" title="Mark paste private" type="checkbox" value="1"/>
+    </span>
+<span class="private" id="private" style="display:none;">
+<strong>Private.</strong>
+Share the private access URL responsibly.
+</span>
+<span class="public" id="public">
+<strong>Public.</strong>
+Anyone will be able to find and view this paste. Google will index it.
+</span>
+  </div>
+  <div align="center" id= "margin">
+          <span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/></span>
+          <span> &nbsp &nbsp &nbsp Password &nbsp &nbsp<input type="password" name="pswrd" id="userid"/></span>
+          </b>
+           <div align = "center">
+          <button onclick="submit()" id="button">Submit</button>
+          </div>
+            <input type="reset" value="Clear"/>
+        <!-- </form> -->
+</div>
+
+
+  <!-- <div align = "center">
+<button onclick="submit()" id="button">Submit</button>
+</div> -->
+</div></body>
+
+</html>

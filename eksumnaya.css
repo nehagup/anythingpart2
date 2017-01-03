@@ -1,28 +1,131 @@
-#textInput
-{
-    font-size:18pt;
-    /*height:33px;*/
-    width:900;
-   }
+<!DOCTYPE html>
+<html>
+<body>
+<script>
 
-#fontSize
+  var currentindex = 0;
+function addInput(){
+    var lastinput = document.getElementById('input'+currentindex);
+   if(lastinput.value != ''){
+        var container = document.getElementById('inputcontainer');
+        var newinput = document.createElement('input');
+        currentindex++;
+        value = newinput.value;
+        newinput.type = "text";
+        newinput.name = 'input'+currentindex;
+        newinput.id = 'input'+currentindex;
+        newinput.onkeyup = addInput;
+        container.appendChild(newinput);
+        newinput.onkeyup = addInput;
+        newinput.onkeyup = convert;
+      }}
+function convert()
 {
-  font-size: 20;
+var text=document.getElementById(newinput.value).value;
+var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+var text1=text.replace(exp, "<a href='$1'>$1</a>");
+var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+
+	  document.getElementById("abechal").innerHTML=text1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
 }
 
+</script>
+   <h1>SAVE YOUR WEBSITES</h1>
+     <!-- <textarea id="url" Placeholder="Enter Some Text With Links">
+     </textarea> -->
+     <a href="http://$2"  id="abechal"></a>
+     <p id="url"></p>
+     <div id="inputcontainer">
+         <input type="text" name="input0" id="input0" onkeyup="addInput();"></input>
+     </div>
+      <span id="fooBar"></span>
+</body>
+</html>
 
-#buttons {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size:24px;
-}
 
-#username
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  var currentindex = 0;
+function addInput(){
+    var lastinput = document.getElementById('input'+currentindex);
+   if(lastinput.value != ''){
+        var container = document.getElementById('inputcontainer');
+        var newinput = document.createElement('input');
+        currentindex++;
+        newinput.type = "text";
+      <!-- console.log(lastinput.value); -->
+        var hoho = lastinput.value;
+        newinput.name = 'input'+currentindex;
+        newinput.id = 'input'+currentindex;
+        newinput.onkeyup = addInput;
+        container.appendChild(newinput);
+        newinput.onkeyup = addInput;
+        convert(hoho);
+      }}
+function convert(text)
 {
-  width: auto;
-  height: auto;
+  console.log(text);
+var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+var text1=text.replace(exp, "<a href='$1'>$1</a>");
+var exp2 =/(^|[^\/])(www\.[\S]+(\b|$))/gim;
+
+
+
+
+
+	  document.getElementById("abechal").innerHTML=text1.replace(exp2, '$1<a target="_blank" href="http://$2">$2</a>');
 }
+
+</script>
+   <h1>SAVE YOUR WEBSITES</h1>
+     </textarea>
+     <a href="http://$2"  id="abechal"></a>
+     <p id="url"></p>
+     <div id="inputcontainer">
+         <input type="text" name="input0" id="input0" onkeyup="addInput();"></input>
+     </div>
+      <span id="fooBar"></span>
+</body>
+</html>
