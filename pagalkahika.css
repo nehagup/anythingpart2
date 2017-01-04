@@ -1,7 +1,24 @@
 #heading {
   font-size: 50px;
   font-weight: bold;
+
   /*text-shadow: 0 0 2px black;*/
+}
+#lightbox img {
+    box-shadow:0 0 25px #111;
+    -webkit-box-shadow:0 0 25px #111;
+    -moz-box-shadow:0 0 25px #111;
+    width: 80%;
+    height: 80% ;
+}
+#lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url(overlay.png) repeat;
+    text-align:center;
 }
 #input0 {
     min-width: 50%;
@@ -13,15 +30,24 @@
     border: 1px solid #ccc;
 }
 #outerbody{
-    style=margin:0;
+    margin:0;
     /*background-color: #f2f2f2;*/
-}
+    padding:0;
+  }
 #body{
   height: 100vh;
   margin: 0;
   margin: 0;
   padding: 0;
 
+}
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
 }
 #margin{
   margin-top : 20px;

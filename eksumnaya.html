@@ -4,6 +4,7 @@
 
 <link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
 <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
 
 <script>
 
@@ -75,10 +76,41 @@ function submit() {
         z.style.display = 'block';
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+jQuery(document).ready(function($) {
+	$('.lightbox_trigger').click(function(e) {
+		e.preventDefault();
+		var image_href = $(this).attr("href");
+		if ($('#lightbox').length > 0) {
+			$('#content').html('<img src="' + image_href + '" />');
+			$('#lightbox').show('fast');
+		}
+		else {
+			var lightbox ='<div id="lightbox">'+'<img src="' + image_href +'" />' +'</div>';
+			$('body').append(lightbox);
+		}
+	});
+	//Click anywhere on the page to get rid of lightbox window
+	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+		$('#lightbox').hide();
+	});
+});
 </script>
 <div id="body"><br>
       <div id="heading" align = "center">
-        SAVE AND SHARE BOOKMARKS ONLINE
+  BookMarks Online
           </div>
           <br>
   <div id="inputcontainer" align="center">
@@ -113,13 +145,42 @@ function submit() {
   <!-- <div align = "center">
 <button onclick="submit()" id="button">Submit</button>
 </div> -->
+<!-- <footer id="footer">
+  <div align="center" id="footertext"><b>Know More<b></div></footer> -->
+
+    <!-- <div id="lightbox">
+        <p>Click to close</p>
+        <div id="content">
+            <img src="#" />
+        </div>
+    </div> -->
+    <footer id="footer">
 
 
+        <!-- <ul>
+            <li> -->
+    <a href="index.jpeg" class="lightbox_trigger">
+              <div align="center" id="footertext"><b>Know How to Use It<b></div></footer>
+                </a>
+            <!-- </li>
+            <li>
+                <a href="https://farm7.static.flickr.com/6020/5924329054_4bdc419c3a_o.jpg" class="lightbox_trigger">
+                Picture 2
+                </a>
+            </li>
+            <li>
+                <a href="https://farm7.static.flickr.com/6020/5931933181_ddb737e528.jpg" class="lightbox_trigger">
+                Picture 3
+                </a>
+            </li>
+        </ul>
+     </p> -->
+</footer> <!-- #/wrapper -->
 
-<!-- light box se image  -->
-<!-- add a snackbar -->
-<!-- login form : ------- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal -->
-<!-- For final design use toolkit jo alt jesa hai! like on hover we get message -->
+<!-- light box se image
+add a snackbar
+login form : ------- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
+For final design use toolkit jo alt jesa hai! like on hover we get message -->
 </div></body>
 
 </html>
