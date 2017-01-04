@@ -1,7 +1,7 @@
 #heading {
   font-size: 50px;
   font-weight: bold;
-  text-shadow: 0 0 2px black;
+  /*text-shadow: 0 0 2px black;*/
 }
 #input0 {
     min-width: 50%;
@@ -14,7 +14,7 @@
 }
 #outerbody{
     style=margin:0;
-    background-color: #f2f2f2;
+    /*background-color: #f2f2f2;*/
 }
 #body{
   height: 100vh;
@@ -27,13 +27,25 @@
   margin-top : 20px;
 }
 #userid{
-  width: 10%;
-  padding: 2px 20px;
+  width: 13%;
+  padding: 5px 1px;
   margin: 8px 0px;
   border-radius: 4px;
   font-size: 15px;
   font-weight: bold;
   border: 1px solid #ccc;
+}
+#password1{
+  display: none;
+}
+#password{
+    width: 13%;
+    padding: 5px 1px;
+    margin: 8px 0px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #ccc;
 }
 #button{
   display: inline-block;
@@ -50,11 +62,30 @@
   border-radius: 15px;
   box-shadow: 0 9px #999;
 }
-
 #button:hover {background-color: #3e8e41}
-
 #button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+#checkBox{
+  float: fixed;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+#public{
+  margin-bottom: 15px;
+   padding: 4px 12px;
+   background-color: #ffffcc;
+   display: inline-block;
+   border-left: 6px solid #f44336;
+}
+#private{
+  background-color: #ddffdd;
+    border-left: 6px solid #4CAF50;
+    display: none;
+      margin-bottom: 15px;
+       padding: 4px 12px;
+
 }

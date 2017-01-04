@@ -3,6 +3,7 @@
 <body id="outerbody">
 
 <link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
 
 <script>
 
@@ -39,7 +40,6 @@ function breakin(){
         document.write("<br>");
         currentId = "input" + i;
         currentElement = document.getElementById(currentId);
-
   }
 }
 
@@ -51,7 +51,7 @@ function submit() {
       console.log(currentElement.value);
   }
 }
-function check(form) { /*function to check userid & password*/
+          function check(form) { /*function to check userid & password*/
                 /*the following code checkes whether the entered userid and password are matching*/
                 if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd") {
                     window.open('target.html')/*opens the target page while Id & password matches*/
@@ -61,39 +61,51 @@ function check(form) { /*function to check userid & password*/
                 }
             }
 
-
+            function changeText() {
+    var x = document.getElementById('public');
+    var y = document.getElementById('private');
+    var z = document.getElementById('password1');
+    if (x.style.display === 'none') {
+        x.style.display = 'inline-block';
+        y.style.display = 'none';
+        z.style.display = 'none';
+    } else {
+        x.style.display = 'none';
+        y.style.display = 'inline-block';
+        z.style.display = 'block';
+    }
+}
 </script>
 <div id="body"><br>
-    <div id="heading" align = "center">
-      SAVE AND SHARE BOOKMARKS ONLINE
+      <div id="heading" align = "center">
+        SAVE AND SHARE BOOKMARKS ONLINE
           </div>
           <br>
   <div id="inputcontainer" align="center">
       <input type="text" name="input0" id="input0" placeholder = "BOOKMARK 1" onkeyup="addInput()" />
-  </div>
-  <!-- <form name="login" align="center"> -->
-  <div align="center">
-    <span class="submit" style="margin-bottom:0;">
-    <input name="paste[restricted]" type="hidden" value="0"/>
-    <input id="paste_restricted" name="paste[restricted]" onclick="toggle_private();" title="Mark paste private" type="checkbox" value="1"/>
-    </span>
-<span class="private" id="private" style="display:none;">
-<strong>Private.</strong>
-Share the private access URL responsibly.
+        </div>
+
+<div align="center">
+<br>
+        <input type="checkbox" id="checkBox" onclick="changeText();">
+
+<span class="private" id="private">
+    <strong>Private.</strong>
+    Only logged in user can find and view this collection.
 </span>
-<span class="public" id="public">
-<strong>Public.</strong>
-Anyone will be able to find and view this paste. Google will index it.
-</span>
-  </div>
+    <span class="public" id="public">
+    <strong>Public.</strong>
+    Anyone will be able to find and view this collection.
+  </span></div>
   <div align="center" id= "margin">
-          <span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/></span>
-          <span> &nbsp &nbsp &nbsp Password &nbsp &nbsp<input type="password" name="pswrd" id="userid"/></span>
+          <span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/>
+          </span>
+          <div id="password1"> Password &nbsp &nbsp
+            <input type="password" name="pswrd" id="password"/></div>
           </b>
            <div align = "center">
           <button onclick="submit()" id="button">Submit</button>
           </div>
-            <input type="reset" value="Clear"/>
         <!-- </form> -->
 </div>
 
@@ -101,6 +113,13 @@ Anyone will be able to find and view this paste. Google will index it.
   <!-- <div align = "center">
 <button onclick="submit()" id="button">Submit</button>
 </div> -->
+
+
+
+<!-- light box se image  -->
+<!-- add a snackbar -->
+<!-- login form : ------- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal -->
+<!-- For final design use toolkit jo alt jesa hai! like on hover we get message -->
 </div></body>
 
 </html>
