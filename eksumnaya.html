@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body id="outerbody">
-
 <link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script> -->
 <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
-
 <script>
-
   var currentindex = 0;
   var i=0;
   function addInput()
-  { if(currentindex<=5){
+  { if(currentindex<=9){
   var lastinput = document.getElementById('input'+currentindex);
   if(lastinput.value != '')
     {
@@ -77,18 +73,6 @@ function submit() {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 jQuery(document).ready(function($) {
 	$('.lightbox_trigger').click(function(e) {
 		e.preventDefault();
@@ -140,24 +124,8 @@ jQuery(document).ready(function($) {
           </div>
         <!-- </form> -->
 </div>
-
-
-  <!-- <div align = "center">
-<button onclick="submit()" id="button">Submit</button>
-</div> -->
-<!-- <footer id="footer">
-  <div align="center" id="footertext"><b>Know More<b></div></footer> -->
-
-    <!-- <div id="lightbox">
-        <p>Click to close</p>
-        <div id="content">
-            <img src="#" />
-        </div>
-    </div> -->
     <footer id="footer">
-
-
-        <!-- <ul>
+  <!-- <ul>
             <li> -->
     <a href="index.jpeg" class="lightbox_trigger">
               <div align="center" id="footertext"><b>Know How to Use It<b></div></footer>
@@ -175,12 +143,10 @@ jQuery(document).ready(function($) {
             </li>
         </ul>
      </p> -->
-</footer> <!-- #/wrapper -->
-
-<!-- light box se image
-add a snackbar
+</footer>
+<!-- add a snackbar
 login form : ------- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
-For final design use toolkit jo alt jesa hai! like on hover we get message -->
+For final design use toolkit jo alt jesa hai! like on hover we get message  -->
 </div></body>
 
 </html>
