@@ -33,25 +33,14 @@
     }
   }else { alert("For more Storage use Premium Account!")   }
 }
-
-
-
-
 function clic()
 {
-
 var close = document.getElementsByClassName("close"+currentindex);
 var i;
-
     var div = this.parentElement;
     console.log(this.parentElement);
-
     <!-- div.style.display = "none"; -->
   }
-
-
-
-
 function breakin(){
   for( var i= 0; i< currentindex; i++){
         document.write("<br>");
@@ -59,7 +48,6 @@ function breakin(){
         currentElement = document.getElementById(currentId);
   }
 }
-
 function submit() {
   console.log(currentindex);
     for (var i = 0; i < currentindex; i++) {
@@ -77,8 +65,7 @@ function submit() {
                     alert("Error Password or Username")/*displays error message*/
                 }
             }
-
-            function changeText() {
+                function changeText() {
     var x = document.getElementById('public');
     var y = document.getElementById('private');
     var z = document.getElementById('password1');
@@ -92,7 +79,6 @@ function submit() {
         z.style.display = 'block';
     }
 }
-
 jQuery(document).ready(function($) {
 	$('.lightbox_trigger').click(function(e) {
 		e.preventDefault();
@@ -110,52 +96,19 @@ jQuery(document).ready(function($) {
 	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
 		$('#lightbox').hide();
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
-
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
     document.body.style.backgroundColor = "white";
 }
-
-
-
-
 </script>
 <div id="body"><br>
-
-
-
-
-
-
-
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">Facebook</a>
@@ -164,20 +117,14 @@ function closeNav() {
     <a href="#">Github</a>
     <div style="color:white" align="center"><span style="color:'white';">  <b>Username &nbsp &nbsp<input type="text"  id="loginUsername"/>
     </span>
-    <div id="loginPass"> Password &nbsp &nbsp
-      <input type="password"  id="loginPass"/></div>
+    <br> Password &nbsp &nbsp
+      <input type="password"  id="loginPass"/>
     </b>
   </div></div>
-
   <div id="main">
-
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Login</span>
   </div>
-
-
-
-
-      <div id="heading" align = "center">
+  <div id="heading" align = "center">
   BookMarks Online
           </div>
           <br>
