@@ -116,18 +116,14 @@ jQuery(document).ready(function($) {
    $('#mySidenav').hide();
    console.log("hello");
   //      $("body").click(function () {
-       var i=1;
-       while(i=1){
+
          closeNav();
-         i++}
+
 
     //       });
-               function closeNav() {
-             document.getElementById("mySidenav").style.width = "0";
-          document.getElementById("main").style.marginLeft= "0";
-                    document.body.style.backgroundColor = "white";
-                 }
+
   });
+
 
 
 
@@ -139,13 +135,20 @@ jQuery(document).ready(function($) {
 
 });
 
+function closeNav() {
+document.getElementById("mySidenav").style.width = "0";
+document.getElementById("main").style.marginLeft= "0";
+     document.body.style.backgroundColor = "white";
+  }
 
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
+    function openNav() {
+        document.getElementById("mySidenav").style.display = "block";
+            document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
 
 
 
@@ -212,32 +215,20 @@ function openNav() {
 
 
 
-
-
-
 <div id="mySidenav" class="sidenav">
   <a href="#">About</a>
+
+  span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/>
+  </span>
+  <div id="password1"> Password &nbsp &nbsp
+    <input type="password" name="pswrd" id="password"/></div>
+  </b>
+
+
 </div>
 <div id="main">
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 </div>
-
-
-
-
-
-
-<button id="nav-toggle">Click me</button>
-<div class="menu">
-  <!-- Menu -->
-  <ul>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Help</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</div>
-
 
 
 
