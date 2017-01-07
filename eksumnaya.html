@@ -113,10 +113,13 @@ jQuery(document).ready(function($) {
 
   $('#mySidenav').live('click', function() {
   //  must use live, as the lightbox element is inserted into the DOM
-
+   $('#mySidenav').hide();
    console.log("hello");
   //      $("body").click(function () {
+
          closeNav();
+
+
     //       });
 
   });
@@ -161,25 +164,6 @@ document.getElementById("main").style.marginLeft= "0";
 
 
       <div id="heading" align = "center">
-
-        <span id="sidebar">
-        <div id="mySidenav" class="sidenav">
-          <a href="#">About</a>
-
-          span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/>
-          </span>
-          <div id="password1"> Password &nbsp &nbsp
-            <input type="password" name="pswrd" id="password"/></div>
-          </b>
-
-
-        </div>
-        <div id="main">
-          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-        </div>
-      </span>
-
-
   BookMarks Online
           </div>
           <br>
@@ -230,6 +214,21 @@ document.getElementById("main").style.marginLeft= "0";
 
 
 
+
+<div id="mySidenav" class="sidenav">
+  <a href="#">About</a>
+
+  span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/>
+  </span>
+  <div id="password1"> Password &nbsp &nbsp
+    <input type="password" name="pswrd" id="password"/></div>
+  </b>
+
+
+</div>
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
 
 
 
