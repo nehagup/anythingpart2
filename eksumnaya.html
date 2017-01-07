@@ -32,6 +32,24 @@
   }else { alert("For more Storage use Premium Account!")   }
 }
 
+
+
+
+function clic()
+{
+
+var close = document.getElementsByClassName("close"+currentindex);
+var i;
+
+    var div = this.parentElement;
+    console.log(this.parentElement);
+
+    <!-- div.style.display = "none"; -->
+  }
+
+
+
+
 function breakin(){
   for( var i= 0; i< currentindex; i++){
         document.write("<br>");
@@ -90,9 +108,58 @@ jQuery(document).ready(function($) {
 	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
 		$('#lightbox').hide();
 	});
+
+
+
+  $('#mySidenav').live('click', function() {
+  //  must use live, as the lightbox element is inserted into the DOM
+   $('#mySidenav').hide();
+   console.log("hello");
+  //      $("body").click(function () {
+       var i=1;
+       while(i=1){
+         closeNav();
+         i++}
+
+    //       });
+               function closeNav() {
+             document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+                    document.body.style.backgroundColor = "white";
+                 }
+  });
+
+
+
+
+
+
+
+
+
 });
+
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+
+
+
+
+
+
+
 </script>
 <div id="body"><br>
+
+
+
+
       <div id="heading" align = "center">
   BookMarks Online
           </div>
@@ -119,11 +186,62 @@ jQuery(document).ready(function($) {
           <div id="password1"> Password &nbsp &nbsp
             <input type="password" name="pswrd" id="password"/></div>
           </b>
+          <div><b>After
+              &nbsp
+            <select>
+              <option value="volvo">Select validity period</option>
+              <option value="volvo">1 day</option>
+              <option value="saab">2 days</option>
+              <option value="opel">3 days</option>
+              <option value="audi">4 days</option>
+              <option value="audi">5 days</option>
+              <option value="audi">6 days</option>
+              <option value="audi">1 week </option>
+              <option value="audi">2 weeks </option>
+              <option value="audi">3 weeks</option>
+              <option value="audi">4 weeks </option>
+              </select>&nbsp &nbsp
+
+             your USERNAME will expire.</b></div>
            <div align = "center">
           <button onclick="submit()" id="button">Submit</button>
           </div>
         <!-- </form> -->
 </div>
+
+
+
+
+
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="#">About</a>
+</div>
+<div id="main">
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+
+
+
+
+
+<button id="nav-toggle">Click me</button>
+<div class="menu">
+  <!-- Menu -->
+  <ul>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Help</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+
+
+
+
+
     <footer id="footer">
   <!-- <ul>
             <li> -->
@@ -144,6 +262,7 @@ jQuery(document).ready(function($) {
         </ul>
      </p> -->
 </footer>
+
 <!-- add a snackbar
 login form : ------- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal
 For final design use toolkit jo alt jesa hai! like on hover we get message  -->
