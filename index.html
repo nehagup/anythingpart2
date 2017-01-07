@@ -22,6 +22,12 @@
         newinput.style.minHeight = "15px";
         newinput.style.padding = "12px 20px";
         newinput.style.margin = "8px 0";
+
+
+
+  //  x.setAttribute("rel", "stylesheet");
+  //  x.setAttribute("type", "text/css");
+  //  x.setAttribute("href", "styles.css");
         newinput.placeholder = "BOOKMARK" + (currentindex+1)  ;
         newinput.style.fontSize = "15px";
         newinput.style.borderRadius = "4px";
@@ -41,13 +47,6 @@ var i;
     console.log(this.parentElement);
     <!-- div.style.display = "none"; -->
   }
-function breakin(){
-  for( var i= 0; i< currentindex; i++){
-        document.write("<br>");
-        currentId = "input" + i;
-        currentElement = document.getElementById(currentId);
-  }
-}
 function submit() {
   console.log(currentindex);
     for (var i = 0; i < currentindex; i++) {

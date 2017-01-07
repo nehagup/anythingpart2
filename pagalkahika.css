@@ -221,3 +221,11 @@ select  {
        padding: 4px 12px;
 
 }
+
+
+  #jsonStr, #regeStr {
+  border: 2px dashed #666;
+  margin: 20px;
+  padding: 10px;
+  font-family: "Arial";
+}
