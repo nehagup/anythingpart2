@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body id="outerbody">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script>
   var currentindex = 0;
   var i=0;
@@ -111,15 +113,8 @@ jQuery(document).ready(function($) {
 
 
 
-  $('#mySidenav').live('click', function() {
-  //  must use live, as the lightbox element is inserted into the DOM
 
-   console.log("hello");
-  //      $("body").click(function () {
-         closeNav();
-    //       });
 
-  });
 
 
 
@@ -132,24 +127,22 @@ jQuery(document).ready(function($) {
 
 });
 
+
+
+
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
 function closeNav() {
-document.getElementById("mySidenav").style.width = "0";
-document.getElementById("main").style.marginLeft= "0";
-     document.body.style.backgroundColor = "white";
-  }
-
-
-    function openNav() {
-        document.getElementById("mySidenav").style.display = "block";
-            document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-
-
-
-
-
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
 
 
 
@@ -158,22 +151,30 @@ document.getElementById("main").style.marginLeft= "0";
 <div id="body"><br>
 
 
-  <span id="sidebar">
+
+
+
+
+
   <div id="mySidenav" class="sidenav">
-    <a href="#">About</a>
-
-    <span>  <b>Username &nbsp &nbsp<input type="text" name="userid" id="userid"/>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Facebook</a>
+    <a href="#">Linkedin</a>
+    <a href="#">Gmail</a>
+    <a href="#">Github</a>
+    <div style="color:white" align="center"><span style="color:'white';">  <b>Username &nbsp &nbsp<input type="text"  id="loginUsername"/>
     </span>
-    <div id="password1"> Password &nbsp &nbsp
-      <input type="password" name="pswrd" id="password"/></div>
+    <div id="loginPass"> Password &nbsp &nbsp
+      <input type="password"  id="loginPass"/></div>
     </b>
+  </div></div>
 
-
-  </div>
   <div id="main">
+
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Login</span>
   </div>
-  </span>
+
+
 
 
       <div id="heading" align = "center">

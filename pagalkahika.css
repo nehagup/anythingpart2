@@ -1,7 +1,7 @@
 #heading {
   font-size: 50px;
   font-weight: bold;
-  position: relative;
+  /*position: relative;*/
   /*text-shadow: 0 0 2px black;*/
 }
 #lightbox img {
@@ -79,50 +79,22 @@ select  {
   font-weight: bold;
   border: 1px solid #ccc;
 }
-
-
-
-
-
-
-
-
-
-
-
-.menu {
-  right: -285px;
-  height: 100%;
-  position: fixed;
-  width: 285px;
-  z-index: 1;
-  background-color: #111111;
-  transition: .2s
+#loginUsername{
+  padding: 5px 1px;
+  margin: 8px 0px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #ccc;
 }
 
-.menu ul {
-  border-top: 1px solid #636366;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-.menu li {
-  border-bottom: 1px solid #636366;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 45px;
-  padding-bottom: 3px;
-  padding-left: 20px;
-  padding-top: 3px;
-}
 
-.menu li a {
-  color: white;
-}
 
-.bar {
-  right: 0px;
-}
+
+
+
+
 
 .sidenav {
     height: 100%;
@@ -136,6 +108,7 @@ select  {
     transition: 0.5s;
     padding-top: 60px;
 }
+
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -144,20 +117,24 @@ select  {
     display: block;
     transition: 0.3s
 }
+
 .sidenav a:hover, .offcanvas a:focus{
     color: #f1f1f1;
 }
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
 #main {
     transition: margin-left .5s;
     padding: 16px;
-    font-size: 10px;
     color: blue;
-    display: inline-block;
-    position: fixed;
-    /*float: right;*/
-
 }
-
 
 
 
@@ -187,6 +164,13 @@ select  {
     font-size: 15px;
     font-weight: bold;
     border: 1px solid #ccc;
+}
+#loginPass{
+      padding: 5px 1px;
+      margin: 8px 0px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
 }
 #button{
   display: inline-block;
