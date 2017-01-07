@@ -1,7 +1,7 @@
 #heading {
   font-size: 50px;
   font-weight: bold;
-
+  position: relative;
   /*text-shadow: 0 0 2px black;*/
 }
 #lightbox img {
@@ -150,6 +150,12 @@ select  {
 #main {
     transition: margin-left .5s;
     padding: 16px;
+    font-size: 10px;
+    color: blue;
+    display: inline-block;
+    position: fixed;
+    /*float: right;*/
+
 }
 
 
