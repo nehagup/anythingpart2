@@ -3,36 +3,112 @@
 <link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
 <body>
-<div id="heading" onclick="OpenInNewTabWinBrowser();" align = "center">  BookMarks Online  </div>
+  <div id="heading" onclick="OpenInNewTabWinBrowser();" align = "center">  BookMarks Online  </div>
+<p id="demo" align="center"></p>
 <footer id="footer">
 <a href="index.jpeg" class="lightbox_trigger">
           <div align="center" id="footertext"><b>Know How to Use It<b></div></footer>
             </a>
+            <div align="center" id= "margin">
+                      <b>Username &nbsp &nbsp</b>
+                   <div id="privateUsername"></div>
+                      &nbsp &nbsp &nbsp
+                      <input type="text" name="userid" id="privateUserid"/>
+                        <div id="privatePass"> Password &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                      <input type="password" name="pswrd" id="privatePassword"/>
+                    </div>
+                      <div align = "center">
+                        <button onclick="changeUsername()" id="changeUsername">Change</button>
+
+                    <button onclick="submit()" id="privateButton">Logout</button>
+                    </div>
+                    </div>
+
 <script>
-  function OpenInNewTabWinBrowser() {
-     var url = "index.html";                                  //   'http://bookmarks.online';
-      console.log("hellooooooooooooo");
-    var win = window.open(url, '_blank');
-    win.focus();
-   }
-   jQuery(document).ready(function($) {
-     $('.lightbox_trigger').click(function(e) {
-       e.preventDefault();
-       var image_href = $(this).attr("href");
-       if ($('#lightbox').length > 0) {
-         $('#content').html('<img src="' + image_href + '" />');
-         $('#lightbox').show('fast');
-       }
-       else {
-         var lightbox ='<div id="lightbox">'+'<img src="' + image_href +'" />' +'</div>';
-         $('body').append(lightbox);
-       }
-     });
-     //Click anywhere on the page to get rid of lightbox window
-     $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-       $('#lightbox').hide();
-     });
-   });
+
+    function changeUsername() {
+      if(document.getElementById("changeUsername").style.backgroundColor == "green")
+      {
+        document.getElementById("privateUsername").innerHTML = document.getElementById("privateUserid").value;
+        console.log(document.getElementById("privateUsername").innerHTML);
+        document.getElementById("privateUsername").style.display = "inline-block";
+        document.getElementById("privateUserid").style.display = "none";
+        document.getElementById("changeUsername").style.backgroundColor = "white";
+        document.getElementById("privatePass").style.display = "none";
+
+
+      }
+
+      else
+      {
+      document.getElementById("privateUsername").style.display = "none";
+      document.getElementById("privateUserid").style.display = "inline-block";
+      document.getElementById("changeUsername").style.backgroundColor = "green";
+      document.getElementById("privatePass").style.display = "block";
+
+
+    }
+  }
+
+
+      var myObj, myJSON, text, obj;
+      //Storing data:
+      myObj  = {
+          "user" : "gupneh",
+          "about" : "mai rone wali ladki hu",
+          "numberOfLinks" : "3",
+          "links" : ["www.google.com", "google.com/bestSarcasmPractices", "bing.com/howToReadShubhamsMind"]
+      }
+      myJSON = JSON.stringify(myObj);
+      localStorage.setItem("testJSON", myJSON);
+      //Retrieving data:
+      text = localStorage.getItem("testJSON");
+      obj = JSON.parse(text);
+      document.getElementById("privateUsername").innerHTML = obj.user;
+      document.getElementById("privateUserid").value = obj.user;
+
+
+
+
+
+
+      for(var i=0; i<(obj.numberOfLinks); i++)
+      {
+      var container = document.getElementById('demo');
+      var newlink = document.createElement('a');
+       newlink.text = obj.links[i];
+      newlink.id = 'link'+ i;
+      newlink.target ="_blank ";
+      newlink.href = "https://"+obj.links[i];
+      container.appendChild(newlink);
+      container.appendChild(document.createElement('br'));
+      container.appendChild(document.createElement('br'));
+      }
+                        jQuery(document).ready(function($) {
+                        	$('.lightbox_trigger').click(function(e) {
+                        		e.preventDefault();
+                        		var image_href = $(this).attr("href");
+                        		if ($('#lightbox').length > 0) {
+                        			$('#content').html('<img src="' + image_href + '" />');
+                        			$('#lightbox').show('fast');
+                        		}
+                        		else {
+                        			var lightbox ='<div id="lightbox">'+'<img src="' + image_href +'" />' +'</div>';
+                        			$('body').append(lightbox);
+                        		}
+                        	});
+                        	//Click anywhere on the page to get rid of lightbox window
+                        	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+                        		$('#lightbox').hide();
+                        	});
+                        });
+              function OpenInNewTabWinBrowser() {
+                 var url = "index.html";                                  //   'http://bookmarks.online';
+                  console.log("hellooooooooooooo");
+                var win = window.open(url, '_blank');
+                win.focus();
+               }
 </script>
+
 </body>
 </html>
