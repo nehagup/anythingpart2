@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
+<script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
+<body>
+<div id="heading" onclick="OpenInNewTabWinBrowser();" align = "center">  BookMarks Online  </div>
+<footer id="footer">
+<a href="index.jpeg" class="lightbox_trigger">
+          <div align="center" id="footertext"><b>Know How to Use It<b></div></footer>
+            </a>
+<script>
+  function OpenInNewTabWinBrowser() {
+     var url = "index.html";                                  //   'http://bookmarks.online';
+      console.log("hellooooooooooooo");
+    var win = window.open(url, '_blank');
+    win.focus();
+   }
+   jQuery(document).ready(function($) {
+     $('.lightbox_trigger').click(function(e) {
+       e.preventDefault();
+       var image_href = $(this).attr("href");
+       if ($('#lightbox').length > 0) {
+         $('#content').html('<img src="' + image_href + '" />');
+         $('#lightbox').show('fast');
+       }
+       else {
+         var lightbox ='<div id="lightbox">'+'<img src="' + image_href +'" />' +'</div>';
+         $('body').append(lightbox);
+       }
+     });
+     //Click anywhere on the page to get rid of lightbox window
+     $('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+       $('#lightbox').hide();
+     });
+   });
+</script>
+</body>
+</html>

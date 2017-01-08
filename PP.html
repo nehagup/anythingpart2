@@ -2,19 +2,13 @@
 <html>
 <link href="pagalkahika.css" media="screen" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
-
 <body>
-  <div id="heading" onclick="OpenInNewTabWinBrowser();" align = "center">
-  BookMarks Online
-          </div>
+  <div id="heading" onclick="OpenInNewTabWinBrowser();" align = "center">  BookMarks Online  </div>
 <p id="demo" align="center"></p>
-
 <footer id="footer">
           <div align="center" onclick="OpenInNewTabWinBrowser();" id="footertext"><b>
           share your links for free, click to get started"<b></div>
-
 </footer>
-<!-- <div onclick="OpenInNewTabWinBrowser();">Click On</div> -->
 <script>
       var myObj, myJSON, text, obj;
       //Storing data:
@@ -61,17 +55,12 @@
                         		$('#lightbox').hide();
                         	});
                         });
-
-
-
-
-                        function OpenInNewTabWinBrowser() {
-                           var url = "index.html";                                  //   'http://bookmarks.online';
-                            console.log("hellooooooooooooo");
-                          var win = window.open(url, '_blank');
-                          win.focus();
-                         }
-
+              function OpenInNewTabWinBrowser() {
+                 var url = "index.html";                                  //   'http://bookmarks.online';
+                  console.log("hellooooooooooooo");
+                var win = window.open(url, '_blank');
+                win.focus();
+               }
 </script>
 
 </body>
