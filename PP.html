@@ -4,79 +4,74 @@
 <script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
 
 <body>
-  <div id="heading" align = "center">
+  <div id="heading" onclick="OpenInNewTabWinBrowser();" align = "center">
   BookMarks Online
           </div>
 <p id="demo" align="center"></p>
+
 <footer id="footer">
-<!-- <ul>
-        <li> -->
-<a href="index.jpeg" class="lightbox_trigger">
-          <div align="center" id="footertext"><b>Know How to Use It<b></div></footer>
-            </a>
-        <!-- </li>
-        <li>
-            <a href="https://farm7.static.flickr.com/6020/5924329054_4bdc419c3a_o.jpg" class="lightbox_trigger">
-            Picture 2
-            </a>
-        </li>
-        <li>
-            <a href="https://farm7.static.flickr.com/6020/5931933181_ddb737e528.jpg" class="lightbox_trigger">
-            Picture 3
-            </a>
-        </li>
-    </ul>
- </p> -->
+          <div align="center" onclick="OpenInNewTabWinBrowser();" id="footertext"><b>
+          share your links for free, click to get started"<b></div>
+
 </footer>
-
+<!-- <div onclick="OpenInNewTabWinBrowser();">Click On</div> -->
 <script>
-var myObj, myJSON, text, obj;
+      var myObj, myJSON, text, obj;
+      //Storing data:
+      myObj  = {
+          "user" : "gupneh",
+          "about" : "mai rone wali ladki hu",
+          "numberOfLinks" : "3",
+          "links" : ["www.google.com", "google.com/bestSarcasmPractices", "bing.com/howToReadShubhamsMind"]
+      }
+      myJSON = JSON.stringify(myObj);
+      localStorage.setItem("testJSON", myJSON);
+      //Retrieving data:
+      text = localStorage.getItem("testJSON");
+      obj = JSON.parse(text);
+      console.log(obj.links[1]);
+      for(var i=0; i<(obj.numberOfLinks); i++)
+      {
+      var container = document.getElementById('demo');
+      console.log("hello");
+      var newlink = document.createElement('a');
+       newlink.text = obj.links[i];
+      newlink.id = 'link'+ i;
+      newlink.target ="_blank ";
+      newlink.href = "https://"+obj.links[i];
+      container.appendChild(newlink);
+      container.appendChild(document.createElement('br'));
+      container.appendChild(document.createElement('br'));
+      }
+                        jQuery(document).ready(function($) {
+                        	$('.lightbox_trigger').click(function(e) {
+                        		e.preventDefault();
+                        		var image_href = $(this).attr("href");
+                        		if ($('#lightbox').length > 0) {
+                        			$('#content').html('<img src="' + image_href + '" />');
+                        			$('#lightbox').show('fast');
+                        		}
+                        		else {
+                        			var lightbox ='<div id="lightbox">'+'<img src="' + image_href +'" />' +'</div>';
+                        			$('body').append(lightbox);
+                        		}
+                        	});
+                        	//Click anywhere on the page to get rid of lightbox window
+                        	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
+                        		$('#lightbox').hide();
+                        	});
+                        });
 
-//Storing data:
-myObj  = {
-    "user" : "gupneh",
-    "about" : "mai rone wali ladki hu",
-    "numberOfLinks" : "3",
-    "links" : ["howto.com/stopcrying", "google.com/bestSarcasmPractices", "bing.com/howToReadShubhamsMind"]
-}
-myJSON = JSON.stringify(myObj);
-localStorage.setItem("testJSON", myJSON);
 
-//Retrieving data:
-text = localStorage.getItem("testJSON");
-obj = JSON.parse(text);
-console.log(obj.links[1]);
-for(var i=0; i<(obj.numberOfLinks); i++)
-{
-var container = document.getElementById('demo');
-console.log("hello");
-var newlink = document.createElement('a');
-newlink.text = obj.links[i];
-newlink.id = 'link'+ i;
-newlink.setAttribute('href','www.google.com');
-container.appendChild(newlink);
-container.appendChild(document.createElement('br'));
-container.appendChild(document.createElement('br'));
-}
 
-jQuery(document).ready(function($) {
-	$('.lightbox_trigger').click(function(e) {
-		e.preventDefault();
-		var image_href = $(this).attr("href");
-		if ($('#lightbox').length > 0) {
-			$('#content').html('<img src="' + image_href + '" />');
-			$('#lightbox').show('fast');
-		}
-		else {
-			var lightbox ='<div id="lightbox">'+'<img src="' + image_href +'" />' +'</div>';
-			$('body').append(lightbox);
-		}
-	});
-	//Click anywhere on the page to get rid of lightbox window
-	$('#lightbox').live('click', function() { //must use live, as the lightbox element is inserted into the DOM
-		$('#lightbox').hide();
-	});
-});
+
+                        function OpenInNewTabWinBrowser() {
+                           var url = "index.html";                                  //   'http://bookmarks.online';
+                            console.log("hellooooooooooooo");
+                          var win = window.open(url, '_blank');
+                          win.focus();
+                         }
+
 </script>
 
 </body>
